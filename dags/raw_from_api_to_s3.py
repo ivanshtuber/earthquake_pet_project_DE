@@ -20,7 +20,7 @@ ACCESS_KEY = Variable.get("access_key")
 SECRET_KEY = Variable.get("secret_key")
 
 LONG_DESCRIPTION = """
-Настоящий DAG осуществляет соеденение с API сайта https://earthquake.usgs.gov 
+DAG осуществляет соеденение с API сайта https://earthquake.usgs.gov 
 и загружают данные о землятресениях в S3
 """
 
