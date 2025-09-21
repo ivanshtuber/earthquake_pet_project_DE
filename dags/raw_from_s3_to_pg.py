@@ -26,10 +26,11 @@ SECRET_KEY = Variable.get("secret_key")
 PASSWORD = Variable.get("pg_password")
 
 LONG_DESCRIPTION = """
-# LONG DESCRIPTION
+DAG осуществляет соеденение перенос данных о землятресениях из S3
+в DWH в слой ODS
 """
 
-SHORT_DESCRIPTION = "SHORT DESCRIPTION"
+SHORT_DESCRIPTION = "Перенос данных из S3 в DWH слой ods"
 
 args = {
     "owner": OWNER,

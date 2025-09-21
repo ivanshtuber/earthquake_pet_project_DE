@@ -20,10 +20,11 @@ ACCESS_KEY = Variable.get("access_key")
 SECRET_KEY = Variable.get("secret_key")
 
 LONG_DESCRIPTION = """
-# LONG DESCRIPTION
+Настоящий DAG осуществляет соеденение с API сайта https://earthquake.usgs.gov 
+и загружают данные о землятресениях в S3
 """
 
-SHORT_DESCRIPTION = "SHORT DESCRIPTION"
+SHORT_DESCRIPTION = "Выгрузка данных из API в S3"
 
 args = {
     "owner": OWNER,

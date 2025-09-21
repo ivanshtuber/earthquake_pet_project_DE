@@ -18,10 +18,16 @@ TARGET_TABLE = "fct_count_day_earthquake"
 PG_CONNECT = "postgres_dwh"
 
 LONG_DESCRIPTION = """
-# LONG DESCRIPTION
+Даг работает в несколько этапов
+0. Запускае сенсор следящий за ДАГом raw_from_s3_to_pg
+1. Удаляет таблицу "stg.fct_count_day_earthquake"
+2. Создает таблицу stg.fct_count_day_earthquake  с одной записью содержащие новые данные
+3. Удаляет записи из таблицы  dm.fct_count_day_earthquake совпадающие по полю date c stg.fct_count_day_earthquake
+4. Добовляет запись из stg.fct_count_day_earthquake в dm.fct_count_day_earthquake
+5. Удаляет таблицу "stg.fct_count_day_earthquake" 
 """
 
-SHORT_DESCRIPTION = "SHORT DESCRIPTION"
+SHORT_DESCRIPTION = "Заполняет таблицу dm.fct_count_day_earthquake"
 
 args = {
     "owner": OWNER,
