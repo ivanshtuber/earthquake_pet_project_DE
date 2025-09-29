@@ -1,6 +1,6 @@
 
 # Earthquake data scraper
-Данный проект реализует инфраструктуру для автоматического сбора информации о землятресениях с сайта [earthquake.usgs.gov](https://earthquake.usgs.gov/)  
+Проект реализует инфраструктуру для автоматического сбора информации о землятресениях с API [earthquake.usgs.gov](https://earthquake.usgs.gov/)  
 Проект развернут с Docker Compose по адресу http://31.128.45.147
 
 
@@ -12,15 +12,15 @@
 - [Docker](https://www.docker.com/)
 
 ## Архитектура
-В проекте реализуется арихтектура Data Lakehouse (Data Lake + DWH).  
-Источником данных является API [earthquake.usgs.gov](https://earthquake.usgs.gov/fdsnws/event/1/#methods).  
+В проекте реализована архитектура Data Lakehouse (Data Lake + DWH).  
+Источник данных  - API [earthquake.usgs.gov](https://earthquake.usgs.gov/fdsnws/event/1/#methods).  
 Data Lake представлен в виде объектного хранилища данных MinIO, куда изначально поступают данные и сохраняются в формате parquet.  
-DWH предствляет собой базу данных под управлением PostgreSQL, где определены три слоя: ODS,STG,DM.  
-Для осуществления загрузки данных из API в Data Lake а затем в DWH используется СУБД Duckdb.  
-Процессы по загрузке данных автоматизированы в Apache Airflow для чего созданы 4 DAG'а.  
+DWH представляет собой базу данных под управлением PostgreSQL, где определены три слоя: ODS, STG, DM.  
+Для загрузки данных из API в Data Lake, а затем в DWH используется СУБД Duckdb.  
+Загрузка данных оркестрируется в Apache Airflow при помощи 4 DAG.  
 Визуализация данных выполняется при помощи Metabase.  
 
-<img width="1549" height="610" alt="image" src="https://github.com/user-attachments/assets/cff71c99-a884-469e-b93c-422e2b4406f9" />
+ <img width="1549" height="610" alt="image" src="https://github.com/user-attachments/assets/ca36557c-ae9d-4deb-9bcb-35445a0bdcdc" />
 
 
 ## Дополнительные ссылки и учетные данные для ознакомления с проектом:
