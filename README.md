@@ -12,13 +12,13 @@
 - [Docker](https://www.docker.com/)
 
 ## Архитектура
-В проекте реализуется арихтектура Data Lakehouse (Data Lake + DWH).
+В проекте реализуется арихтектура Data Lakehouse (Data Lake + DWH).  
 Источником данных является API [earthquake.usgs.gov](https://earthquake.usgs.gov/fdsnws/event/1/#methods).  
 Data Lake представлен в виде объектного хранилища данных MinIO, куда изначально поступают данные и сохраняются в формате parquet.  
 DWH предствляет собой базу данных под управлением PostgreSQL, где определены три слоя: ODS,STG,DM.  
 Для осуществления загрузки данных из API в Data Lake а затем в DWH используется СУБД Duckdb.  
-Процессы по загрузке данных автоматизированы в Apache Airflow для чего созданы 4 DAG'а.
-Визуализация данных выполняется при помощи Metabase. 
+Процессы по загрузке данных автоматизированы в Apache Airflow для чего созданы 4 DAG'а.  
+Визуализация данных выполняется при помощи Metabase.  
 
 <img width="1549" height="610" alt="image" src="https://github.com/user-attachments/assets/cff71c99-a884-469e-b93c-422e2b4406f9" />
 
